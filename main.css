@@ -77,6 +77,7 @@ table {
 .weather-app {
   background: linear-gradient(180deg, #004E92 0%, #000428 100%);
   color: #FFF;
+  font: 1.3em/1.3em 'Montserrat', sans-serif;
   height: 100vh;
 }
 
