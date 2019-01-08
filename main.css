@@ -79,3 +79,29 @@ table {
   color: #FFF;
   height: 100vh;
 }
+
+/*
+  =======================================
+  Location
+  =======================================
+*/
+
+.location {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+}
+
+.location input, .location button {
+  height: 2em;
+}
+
+.location input {
+  width: 80%;
+}
+
+.location button {
+  background: url(icons/search-icon.svg) center no-repeat;
+  background-size: cover;
+  width: 2em;
+}
