@@ -88,6 +88,7 @@ table {
 */
 
 .location {
+  align-items: center;
   display: flex;
   justify-content: space-between;
   width: 85%;
@@ -98,11 +99,21 @@ table {
 }
 
 .location input {
+  background: rgba(0,0,0,0);
+  border: 0;
+  color: #FFF;
+  font: 1em/1em 'Montserrat', sans-serif;
+  text-transform: uppercase;
   width: 80%;
+}
+
+.location input::placeholder {
+  color: #FFF;
 }
 
 .location button {
   background: url(icons/search-icon.svg) center no-repeat;
   background-size: cover;
+  border: 0;
   width: 2em;
 }
