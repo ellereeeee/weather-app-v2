@@ -117,3 +117,24 @@ table {
   border: 0;
   width: 2em;
 }
+
+/*
+  =======================================
+  Location
+  =======================================
+*/
+
+.current-weather {
+  text-align: center;
+}
+
+.current-weather img {
+  margin-bottom: 1em;
+  width: 3em;
+}
+
+.current-weather p {
+  display: block;
+  font-size: 5em;
+  padding: .25em 0;
+}
