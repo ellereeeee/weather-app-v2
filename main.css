@@ -138,3 +138,24 @@ table {
   font-size: 5em;
   padding: .25em 0;
 }
+
+/*
+  =======================================
+  Current Weather Details
+  =======================================
+*/
+
+.current-weather-details {
+  justify-content: space-between;
+  width: 90%;
+}
+
+.current-weather-details, .current-weather-details div {
+  display: flex;
+  align-items: center;
+}
+
+.current-weather-details p {
+  display: inline-block;
+  margin-left: .5em;
+}
