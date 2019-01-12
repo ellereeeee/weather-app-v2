@@ -93,7 +93,7 @@ table {
 }
 
 .location input, .location button {
-  height: 2em;
+  height: 1.75em;
 }
 
 .location input {
@@ -115,7 +115,7 @@ table {
   background: url(icons/search-icon.svg) center no-repeat;
   background-size: cover;
   border: 0;
-  width: 2em;
+  width: 1.75em;
 }
 
 /*
