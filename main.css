@@ -146,6 +146,7 @@ table {
 */
 
 .current-weather-details {
+  font-size: .8em;
   justify-content: space-between;
   width: 90%;
 }
@@ -167,6 +168,7 @@ table {
 */
 
 .weekly-forecast {
+  font-size: .8em;
   width: 90%;
 }
 
@@ -193,4 +195,8 @@ table {
 .weekday-forecast img {
   height: 100%;
   width: 1.33em;
+}
+
+.attribution {
+  font-size: .8em;
 }
