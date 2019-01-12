@@ -201,3 +201,34 @@ table {
 .attribution {
   font-size: .8em;
 }
+
+/*
+  =======================================
+  Media Queries
+  =======================================
+*/
+
+@media screen and (min-width: 420px) {
+  body {
+    align-items: center;
+    background: grey;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+  }
+  
+  .weather-app {
+    box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.25);
+    font: 1em/1em "Montserrat", sans-serif;
+    height: 27em;
+    width: 16em;
+  }
+  
+  .location input, .location button {
+    height: 1.33em;
+  }
+
+  .location button {
+    width: 1.33em;
+  }
+}
