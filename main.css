@@ -74,9 +74,9 @@ table {
   display: flex;
   flex-direction: column;
   font: 1.3em/1.3em 'Montserrat', sans-serif;
-  height: 100vh;
-  letter-spacing: .05em;
+  min-height: 100vh;
   justify-content: space-around;
+  letter-spacing: .05em;
 }
 
 /*
@@ -220,7 +220,7 @@ table {
   .weather-app {
     box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.25);
     font: 1em/1em "Montserrat", sans-serif;
-    height: 27em;
+    min-height: 27em;
     width: 16em;
   }
   
@@ -236,7 +236,7 @@ table {
 @media screen and (min-width: 1200px) {
   .weather-app {
     font: 1.3em/1.3em "Montserrat", sans-serif;
-    height: 27.5em;
+    min-height: 27.5em;
   }
   
   .location input, .location button {
