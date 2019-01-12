@@ -186,3 +186,8 @@ table {
 .weekday-forecast div p {
   margin-left: .5em;
 }
+
+.weekday-forecast img {
+  height: 100%;
+  width: 1.33em;
+}
