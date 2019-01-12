@@ -75,6 +75,7 @@ table {
   flex-direction: column;
   font: 1.3em/1.3em 'Montserrat', sans-serif;
   height: 100vh;
+  letter-spacing: .05em;
   justify-content: space-around;
 }
 
@@ -100,12 +101,14 @@ table {
   border: 0;
   color: #FFF;
   font: 1em/1em 'Montserrat', sans-serif;
+  letter-spacing: .05em;
   text-transform: uppercase;
   width: 80%;
 }
 
 .location input::placeholder {
   color: #FFF;
+  letter-spacing: .05em;
 }
 
 .location button {
