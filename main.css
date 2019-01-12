@@ -198,7 +198,9 @@ table {
 }
 
 .attribution {
+  color: #FFF;
   font-size: .6em;
+  text-decoration: none;
 }
 
 /*
