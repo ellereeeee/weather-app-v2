@@ -129,13 +129,13 @@ table {
 }
 
 .current-weather img {
-  margin-bottom: 1em;
+  margin-bottom: .5em;
   width: 3em;
 }
 
 .current-weather p {
   display: block;
-  font-size: 5em;
+  font-size: 4em;
   padding: .25em 0;
 }
 
