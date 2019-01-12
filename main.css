@@ -232,3 +232,18 @@ table {
     width: 1.33em;
   }
 }
+
+@media screen and (min-width: 1200px) {
+  .weather-app {
+    font: 1.3em/1.3em "Montserrat", sans-serif;
+    height: 27.5em;
+  }
+  
+  .location input, .location button {
+    height: 1.75em;
+  }
+
+  .location button {
+    width: 1.75em;
+  }
+}
