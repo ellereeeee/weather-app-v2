@@ -156,3 +156,33 @@ table {
   display: inline-block;
   margin-left: .5em;
 }
+
+/*
+  =======================================
+  Weekly Forecast
+  =======================================
+*/
+
+.weekly-forecast {
+  width: 90%;
+}
+
+.weekday-forecast {
+  border-bottom: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  padding: .33em 0;
+  width: 100%;
+}
+
+.weekday-forecast:last-child {
+  border-bottom: none;
+}
+
+.weekday-forecast div {
+  display: flex;
+}
+
+.weekday-forecast div p {
+  margin-left: .5em;
+}
