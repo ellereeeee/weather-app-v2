@@ -61,13 +61,6 @@ table {
           box-sizing: border-box;
 }
 
-.v-flex-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
 /*
   =======================================
   Custom Styles
@@ -75,10 +68,14 @@ table {
 */
 
 .weather-app {
+  align-items: center;
   background: linear-gradient(180deg, #004E92 0%, #000428 100%);
   color: #FFF;
+  display: flex;
+  flex-direction: column;
   font: 1.3em/1.3em 'Montserrat', sans-serif;
   height: 100vh;
+  justify-content: space-around;
 }
 
 /*
