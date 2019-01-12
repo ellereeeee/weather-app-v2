@@ -148,6 +148,7 @@ table {
 .current-weather-details {
   font-size: .8em;
   justify-content: space-between;
+  margin-top: .75em;
   width: 90%;
 }
 
