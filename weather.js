@@ -25,9 +25,9 @@ window.addEventListener('load', () => {
           // unpack current weather and render info
           let { icon, temperature, windSpeed, precipProbability } = data.currently;
           let {temperatureHigh, temperatureLow } = data.daily.data[1];
-          current_weather.innerHTML = temperature;
+          current_weather.innerHTML = `${temperature}°`;
           current_wind_speed.innerHTML = windSpeed;
-          current_high_low.innerHTML = `${temperatureHigh}/${temperatureLow}`;
+          current_high_low.innerHTML = `${temperatureHigh}°/${temperatureLow}°`;
           current_precip_chance.innerHTML = precipProbability + '%';
         
         }); // close fetch(api)
