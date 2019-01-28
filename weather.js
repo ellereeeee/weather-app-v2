@@ -4,6 +4,7 @@ window.addEventListener('load', () => {
   
   let current_weather = document.getElementById('current-weather');
   let current_wind_speed = document.getElementById('current-wind-speed');
+  let current_high_low = document.getElementById('current-high-low');
   let current_precip_chance = document.getElementById('current-precip-chance');
   
   if (navigator.geolocation) {
@@ -23,8 +24,10 @@ window.addEventListener('load', () => {
           
           // unpack current weather and render info
           let { icon, temperature, windSpeed, precipProbability } = data.currently;
+          let {temperatureHigh, temperatureLow } = data.daily.data[1];
           current_weather.innerHTML = temperature;
           current_wind_speed.innerHTML = windSpeed;
+          current_high_low.innerHTML = `${temperatureHigh}/${temperatureLow}`;
           current_precip_chance.innerHTML = precipProbability + '%';
         
         }); // close fetch(api)
