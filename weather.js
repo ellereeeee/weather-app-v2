@@ -18,8 +18,7 @@ window.addEventListener('load', () => {
         .then(response => {
           return response.json();
         })
-        .then(response => {
-          let data = response;
+        .then(data => {
           console.log(data);
           
           // unpack current weather and render info
