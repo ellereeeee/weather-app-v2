@@ -26,7 +26,7 @@ window.addEventListener('load', () => {
           let { icon, temperature, windSpeed, precipProbability } = data.currently;
           let {temperatureHigh, temperatureLow } = data.daily.data[1];
           current_weather.innerHTML = `${temperature}°`;
-          current_wind_speed.innerHTML = windSpeed;
+          current_wind_speed.innerHTML = `${windSpeed} m/s`;
           current_high_low.innerHTML = `${temperatureHigh}°/${temperatureLow}°`;
           current_precip_chance.innerHTML = precipProbability + '%';
         
