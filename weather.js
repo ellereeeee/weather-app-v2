@@ -10,13 +10,15 @@ window.addEventListener('load', () => {
   let current_precip_chance = document.getElementById('current-precip-chance');
   
   if (navigator.geolocation) {
+    // get current coordinates of user
     navigator.geolocation.getCurrentPosition(position => {
       latitude = position.coords.latitude;
       longitude = position.coords.longitude;
       
       const proxy = 'https://cors-anywhere.herokuapp.com/';
       const api = `${proxy}https://api.darksky.net/forecast/4e38f510a79dde73e99fcfe03980e309/${latitude},${longitude}?units=auto`;
-
+      
+      // call dark sky API
       fetch(api)
         .then(response => {
           return response.json();
