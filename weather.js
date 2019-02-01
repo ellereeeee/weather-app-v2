@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
           
           // unpack current weather and render info
           let { icon, temperature, windSpeed, precipProbability } = data.currently;
-          let {temperatureHigh, temperatureLow } = data.daily.data[1];
+          let {temperatureHigh, temperatureLow } = data.daily.data[0];
           
           skycons.add('current-weather-icon', icon);
           skycons.play();
