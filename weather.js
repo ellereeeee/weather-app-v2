@@ -2,12 +2,15 @@ window.addEventListener('load', () => {
   let latitude;
   let longitude;
   let skycons = new Skycons({'color': 'white'});
-      
+  
+  // DOM references for current weather elements
   let current_weather = document.getElementById('current-weather');
   let current_weather_icon = document.getElementById('current-weather-icon');
   let current_wind_speed = document.getElementById('current-wind-speed');
   let current_high_low = document.getElementById('current-high-low');
   let current_precip_chance = document.getElementById('current-precip-chance');
+  
+  // DOM references for weekly forecast elements
   
   if (navigator.geolocation) {
     // get current coordinates of user
