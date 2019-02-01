@@ -128,8 +128,9 @@ table {
   text-align: center;
 }
 
-.current-weather img {
-  width: 2.5em;
+#current-weather-icon {
+    height: auto;
+    width: 4.5em;
 }
 
 .current-weather p {
