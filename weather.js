@@ -11,6 +11,8 @@ window.addEventListener('load', () => {
   let current_precip_chance = document.getElementById('current-precip-chance');
   
   // DOM references for weekly forecast elements
+  let day_one = document.getElementById('day-one');
+  let day_one_temps = document.getElementById('day-one-temps');
   
   // get day name from UNIX timestamp
   function getDayName(time) {
@@ -63,11 +65,16 @@ window.addEventListener('load', () => {
           let {temperatureHigh, temperatureLow } = data.daily.data[0];
           
           skycons.add('current-weather-icon', icon);
-          skycons.play();
           current_weather.innerHTML = `${Math.round(temperature)}°`;
           current_wind_speed.innerHTML = `${Math.round(windSpeed)} m/s`;
           current_high_low.innerHTML = `${Math.round(temperatureHigh)}°/${Math.round(temperatureLow)}°`;
           current_precip_chance.innerHTML = precipProbability + '%';
+          
+          // render weekly forecast info
+          day_one.innerHTML = getDayName(data.daily.data[1].time);
+          skycons.add('day-one-icon', data.daily.data[1].icon)
+          day_one_temps.innerHTML = `${Math.round(data.daily.data[1].temperatureHigh)}°/${Math.round(data.daily.data[1].temperatureLow)}°`;
+          skycons.play();
 
         }); // close fetch(api)
     }); // close getCurrentPosition
