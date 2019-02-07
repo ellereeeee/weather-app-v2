@@ -29,6 +29,9 @@ window.addEventListener('load', () => {
   let day_six = document.getElementById('day-six');
   let day_six_temps = document.getElementById('day-six-temps');
   
+  let day_seven = document.getElementById('day-seven');
+  let day_seven_temps = document.getElementById('day-seven-temps');
+  
   // get day name from UNIX timestamp
   function getDayName(time) {
     let day;
@@ -118,6 +121,10 @@ window.addEventListener('load', () => {
           day_six.innerHTML = getDayName(data.daily.data[6].time);
           skycons.add('day-six-icon', ensureDayIcon(data.daily.data[6].icon));
           day_six_temps.innerHTML = `${Math.round(data.daily.data[6].temperatureHigh)}°/${Math.round(data.daily.data[6].temperatureLow)}°`;
+          
+          day_seven.innerHTML = getDayName(data.daily.data[7].time);
+          skycons.add('day-seven-icon', ensureDayIcon(data.daily.data[7].icon));
+          day_seven_temps.innerHTML = `${Math.round(data.daily.data[7].temperatureHigh)}°/${Math.round(data.daily.data[7].temperatureLow)}°`;
         
           skycons.play();
 
