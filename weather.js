@@ -12,6 +12,35 @@ window.addEventListener('load', () => {
   
   // DOM references for weekly forecast elements
   
+  // get day name from UNIX timestamp
+  function getDayName(time) {
+    let day;
+    switch (new Date(time*1000).getDay()) {
+      case 0:
+        day = "Sun";
+        break;
+      case 1:
+        day = "Mon";
+        break;
+      case 2:
+        day = "Tues";
+        break;
+      case 3:
+        day = "Wed";
+        break;
+      case 4:
+        day = "Thurs";
+        break;
+      case 5:
+        day = "Fri";
+        break;
+      case 6:
+        day = "Sat";
+    }
+
+    return day;
+  }
+    
   if (navigator.geolocation) {
     // get current coordinates of user
     navigator.geolocation.getCurrentPosition(position => {
@@ -39,7 +68,7 @@ window.addEventListener('load', () => {
           current_wind_speed.innerHTML = `${Math.round(windSpeed)} m/s`;
           current_high_low.innerHTML = `${Math.round(temperatureHigh)}°/${Math.round(temperatureLow)}°`;
           current_precip_chance.innerHTML = precipProbability + '%';
-        
+
         }); // close fetch(api)
     }); // close getCurrentPosition
   } // close navigator.geolocation
