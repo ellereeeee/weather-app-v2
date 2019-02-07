@@ -14,6 +14,9 @@ window.addEventListener('load', () => {
   let day_one = document.getElementById('day-one');
   let day_one_temps = document.getElementById('day-one-temps');
   
+  let day_two = document.getElementById('day-two');
+  let day_two_temps = document.getElementById('day-two-temps');
+  
   // get day name from UNIX timestamp
   function getDayName(time) {
     let day;
@@ -72,8 +75,13 @@ window.addEventListener('load', () => {
           
           // render weekly forecast info
           day_one.innerHTML = getDayName(data.daily.data[1].time);
-          skycons.add('day-one-icon', data.daily.data[1].icon)
+          skycons.add('day-one-icon', data.daily.data[1].icon);
           day_one_temps.innerHTML = `${Math.round(data.daily.data[1].temperatureHigh)}°/${Math.round(data.daily.data[1].temperatureLow)}°`;
+        
+          day_two.innerHTML = getDayName(data.daily.data[2].time);
+          skycons.add('day-two-icon', data.daily.data[2].icon);
+          day_two_temps.innerHTML = `${Math.round(data.daily.data[2].temperatureHigh)}°/${Math.round(data.daily.data[2].temperatureLow)}°`;
+        
           skycons.play();
 
         }); // close fetch(api)
