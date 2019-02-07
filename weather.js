@@ -48,6 +48,15 @@ window.addEventListener('load', () => {
 
     return day;
   }
+  
+  // show only day icons. See here for more info: https://darksky.net/dev/docs/faq#icon-selection
+  function ensureDayIcon(i) {
+    if (i == 'partly-cloudy-night') {
+      return 'clear-day';
+    } else {
+      return i;
+    }
+  }
     
   if (navigator.geolocation) {
     // get current coordinates of user
@@ -70,7 +79,7 @@ window.addEventListener('load', () => {
           let { icon, temperature, windSpeed, precipProbability } = data.currently;
           let {temperatureHigh, temperatureLow } = data.daily.data[0];
           
-          skycons.add('current-weather-icon', icon);
+          skycons.add('current-weather-icon', ensureDayIcon(icon));
           current_weather.innerHTML = `${Math.round(temperature)}°`;
           current_wind_speed.innerHTML = `${Math.round(windSpeed)} m/s`;
           current_high_low.innerHTML = `${Math.round(temperatureHigh)}°/${Math.round(temperatureLow)}°`;
@@ -78,15 +87,15 @@ window.addEventListener('load', () => {
           
           // render weekly forecast info
           day_one.innerHTML = getDayName(data.daily.data[1].time);
-          skycons.add('day-one-icon', data.daily.data[1].icon);
+          skycons.add('day-one-icon', ensureDayIcon(data.daily.data[1].icon));
           day_one_temps.innerHTML = `${Math.round(data.daily.data[1].temperatureHigh)}°/${Math.round(data.daily.data[1].temperatureLow)}°`;
         
           day_two.innerHTML = getDayName(data.daily.data[2].time);
-          skycons.add('day-two-icon', data.daily.data[2].icon);
+          skycons.add('day-two-icon', ensureDayIcon(data.daily.data[2].icon));
           day_two_temps.innerHTML = `${Math.round(data.daily.data[2].temperatureHigh)}°/${Math.round(data.daily.data[2].temperatureLow)}°`;
         
           day_three.innerHTML = getDayName(data.daily.data[3].time);
-          skycons.add('day-three-icon', data.daily.data[3].icon);
+          skycons.add('day-three-icon', ensureDayIcon(data.daily.data[3].icon));
           day_three_temps.innerHTML = `${Math.round(data.daily.data[3].temperatureHigh)}°/${Math.round(data.daily.data[3].temperatureLow)}°`;
         
           skycons.play();
