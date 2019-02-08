@@ -34,31 +34,12 @@ window.addEventListener('load', () => {
   
   // get day name from UNIX timestamp
   function getDayName(time) {
-    let day;
-    switch (new Date(time*1000).getDay()) {
-      case 0:
-        day = "Sun";
-        break;
-      case 1:
-        day = "Mon";
-        break;
-      case 2:
-        day = "Tues";
-        break;
-      case 3:
-        day = "Wed";
-        break;
-      case 4:
-        day = "Thurs";
-        break;
-      case 5:
-        day = "Fri";
-        break;
-      case 6:
-        day = "Sat";
-    }
-
-    return day;
+    let dateObj = new Date(time*1000);
+    let dateString = dateObj.toString();
+    let regex = /^.+?(?=\s\d{4})/;
+    let dayMonthDate = dateString.match(regex).join();
+    
+    return dayMonthDate;
   }
   
   // show only day icons. See here for more info: https://darksky.net/dev/docs/faq#icon-selection
