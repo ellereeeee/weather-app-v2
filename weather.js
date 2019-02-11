@@ -73,7 +73,7 @@ window.addEventListener('load', () => {
           let {temperatureHigh, temperatureLow } = data.daily.data[0];
           
           skycons.add('current-weather-icon', ensureDayIcon(icon));
-          current_weather.innerHTML = `${Math.round(temperature)}°`;
+          current_weather.innerHTML = `${Math.round(temperature)}`;
           current_wind_speed.innerHTML = `${Math.round(windSpeed)} m/s`;
           current_high_low.innerHTML = `${Math.round(temperatureHigh)}°/${Math.round(temperatureLow)}°`;
           current_precip_chance.innerHTML = precipProbability + '%';
