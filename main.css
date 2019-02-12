@@ -145,8 +145,10 @@ table {
 #farenheit, #celsius {
   display: none;
   font-size: 1em;
+  height: 100%;
+  margin: .1em .25em;
   opacity: .5;
-  padding: .1em .25em;
+  padding: 0;
 }
 
 .current-unit {
