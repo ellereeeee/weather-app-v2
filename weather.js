@@ -79,7 +79,7 @@ window.addEventListener('load', () => {
           current_weather.innerHTML = `${Math.round(temperature)}`;
           farenheit_button.style.display = "inline-block";
           celsius_button.style.display = "inline-block";
-          (units == 'si' ? celsius_button.style.opacity = 1 : farenheit_button.style.opacity = 1);
+          (units == 'si' ? farenheit_button.className = "toggable" : celsius_button.className = "toggable");
           current_wind_speed.innerHTML = `${Math.round(windSpeed)} m/s`;
           current_high_low.innerHTML = `${Math.round(temperatureHigh)}°/${Math.round(temperatureLow)}°`;
           current_precip_chance.innerHTML = precipProbability + '%';

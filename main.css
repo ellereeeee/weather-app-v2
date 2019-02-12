@@ -147,12 +147,12 @@ table {
   font-size: 1em;
   height: 100%;
   margin: .1em .25em;
-  opacity: .5;
   padding: 0;
 }
 
-.current-unit {
-  opacity: 1;
+.toggable {
+  cursor: pointer;
+  opacity: .5;
 }
 
 /*
