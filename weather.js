@@ -5,6 +5,8 @@ window.addEventListener('load', () => {
   
   // DOM references for current weather elements
   let current_weather = document.getElementById('current-weather');
+  let farenheit_button = document.getElementById('farenheit');
+  let celsius_button = document.getElementById('celsius');
   let current_weather_icon = document.getElementById('current-weather-icon');
   let current_wind_speed = document.getElementById('current-wind-speed');
   let current_high_low = document.getElementById('current-high-low');
@@ -70,10 +72,14 @@ window.addEventListener('load', () => {
           
           // unpack current weather and render info
           let { icon, temperature, windSpeed, precipProbability } = data.currently;
+          let { units } = data.flags;
           let {temperatureHigh, temperatureLow } = data.daily.data[0];
           
           skycons.add('current-weather-icon', ensureDayIcon(icon));
           current_weather.innerHTML = `${Math.round(temperature)}`;
+          farenheit_button.style.display = "inline-block";
+          celsius_button.style.display = "inline-block";
+          (units == 'si' ? celsius_button.style.opacity = 1 : farenheit_button.style.opacity = 1);
           current_wind_speed.innerHTML = `${Math.round(windSpeed)} m/s`;
           current_high_low.innerHTML = `${Math.round(temperatureHigh)}°/${Math.round(temperatureLow)}°`;
           current_precip_chance.innerHTML = precipProbability + '%';

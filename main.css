@@ -143,9 +143,14 @@ table {
 }
 
 #farenheit, #celsius {
+  display: none;
   font-size: 1em;
   opacity: .5;
   padding: .1em .25em;
+}
+
+.current-unit {
+  opacity: 1;
 }
 
 /*
