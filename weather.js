@@ -1,6 +1,7 @@
 window.addEventListener('load', () => {
   let latitude;
   let longitude;
+  let weather_unit;
   let skycons = new Skycons({'color': 'white'});
   
   // DOM references for current weather elements
@@ -50,6 +51,23 @@ window.addEventListener('load', () => {
       return 'clear-day';
     } else {
       return i;
+    }
+  }
+  
+  // convert and render weather units
+  function convertTemps() {
+    if (weather_unit == 'C') {
+      weather_unit = 'F';
+      farenheit_button.removeEventListener('click', convertTemps);
+      farenheit_button.className = '';
+      celsius_button.addEventListener('click', convertTemps);
+      celsius_button.className = 'toggable';
+    } else {
+      weather_unit = 'C';
+      celsius_button.removeEventListener('click', convertTemps);
+      celsius_button.className = '';
+      farenheit_button.addEventListener('click', convertTemps);
+      farenheit_button.className = 'toggable';
     }
   }
     
@@ -114,6 +132,12 @@ window.addEventListener('load', () => {
           day_seven_temps.innerHTML = `${Math.round(data.daily.data[7].temperatureHigh)}°/${Math.round(data.daily.data[7].temperatureLow)}°`;
         
           skycons.play();
+        
+          // initialize weather unit state
+          units == 'si' ? weather_unit = 'C' : weather_unit = 'F';
+        
+          // initialize toggable weather unit
+          weather_unit == 'C' ? farenheit_button.addEventListener('click', convertTemps) : celsius_button.addEventListener('click', convertTemps);
 
         }); // close fetch(api)
     }); // close getCurrentPosition
