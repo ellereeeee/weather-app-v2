@@ -56,11 +56,14 @@ window.addEventListener('load', () => {
   
   // convert and render weather data
   function convertData() {
+    
     let convertTemps;
+    let convertWindSpeed;
     
     // set conversion formulas and toggle F and C button styles and clickability
     if (weather_unit == 'C') {
       convertTemps = function(temp) {return (temp * (9/5) + 32);}
+      convertWindSpeed = function(ws) {return Math.round(ws * 2.237) + ' mph';}
       
       farenheit_button.removeEventListener('click', convertData);
       farenheit_button.className = '';
@@ -68,6 +71,7 @@ window.addEventListener('load', () => {
       celsius_button.className = 'toggable';
     } else {
       convertTemps = function(temp) {return ((temp - 32) * (5/9));}
+      convertWindSpeed = function(ws) {return Math.round(ws / 2.237) + ' m/s';}
       
       celsius_button.removeEventListener('click', convertData);
       celsius_button.className = '';
@@ -101,6 +105,11 @@ window.addEventListener('load', () => {
         temperatureNodes[i].innerHTML = Math.round(convertTemps(temperatureNodes[i].innerHTML));
       }
     }
+    
+    // render new wind speed
+    let windSpeedRegex = / .{3}/; 
+    let windSpeedInt = current_wind_speed.innerHTML.replace(windSpeedRegex, '');
+    current_wind_speed.innerHTML = convertWindSpeed(windSpeedInt);
     
     // switch weather unit state
     weather_unit == 'C' ? weather_unit = 'F' : weather_unit = 'C';
