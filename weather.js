@@ -54,24 +54,24 @@ window.addEventListener('load', () => {
     }
   }
   
-  // convert and render weather units
-  function convertTemps() {
-    let conversionFormula;
+  // convert and render weather data
+  function convertData() {
+    let convertTemps;
     
-    // set conversion formula and toggle F and C buttons
+    // set conversion formulas and toggle F and C button styles and clickability
     if (weather_unit == 'C') {
-      conversionFormula = function(temp) {return (temp * (9/5) + 32);}
-      weather_unit = 'F';
-      farenheit_button.removeEventListener('click', convertTemps);
+      convertTemps = function(temp) {return (temp * (9/5) + 32);}
+      
+      farenheit_button.removeEventListener('click', convertData);
       farenheit_button.className = '';
-      celsius_button.addEventListener('click', convertTemps);
+      celsius_button.addEventListener('click', convertData);
       celsius_button.className = 'toggable';
     } else {
-      conversionFormula = function(temp) {return ((temp - 32) * (5/9));} 
-      weather_unit = 'C';
-      celsius_button.removeEventListener('click', convertTemps);
+      convertTemps = function(temp) {return ((temp - 32) * (5/9));}
+      
+      celsius_button.removeEventListener('click', convertData);
       celsius_button.className = '';
-      farenheit_button.addEventListener('click', convertTemps);
+      farenheit_button.addEventListener('click', convertData);
       farenheit_button.className = 'toggable';
     }
     
@@ -93,14 +93,18 @@ window.addEventListener('load', () => {
         highAndLow = temperatureNodes[i].innerHTML.split('/');
         for (let j = 0; j < highAndLow.length; j++) {
           highAndLow[j] = highAndLow[j].replace('°', '');
-          highAndLow[j] = Math.round(conversionFormula(highAndLow[j])) + '°';
+          highAndLow[j] = Math.round(convertTemps(highAndLow[j])) + '°';
         }
         temperatureNodes[i].innerHTML = highAndLow.join('/');
       } else {
         // convert current temp
-        temperatureNodes[i].innerHTML = Math.round(conversionFormula(temperatureNodes[i].innerHTML));
+        temperatureNodes[i].innerHTML = Math.round(convertTemps(temperatureNodes[i].innerHTML));
       }
     }
+    
+    // switch weather unit state
+    weather_unit == 'C' ? weather_unit = 'F' : weather_unit = 'C';
+    
   } // close convertTemps function
     
   if (navigator.geolocation) {
@@ -169,7 +173,7 @@ window.addEventListener('load', () => {
           units == 'si' ? weather_unit = 'C' : weather_unit = 'F';
         
           // initialize toggable weather unit
-          weather_unit == 'C' ? farenheit_button.addEventListener('click', convertTemps) : celsius_button.addEventListener('click', convertTemps);
+          weather_unit == 'C' ? farenheit_button.addEventListener('click', convertData) : celsius_button.addEventListener('click', convertData);
 
         }); // close fetch(api)
     }); // close getCurrentPosition
