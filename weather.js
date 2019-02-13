@@ -56,21 +56,52 @@ window.addEventListener('load', () => {
   
   // convert and render weather units
   function convertTemps() {
-    // toggle F and C buttons' functionality
+    let conversionFormula;
+    
+    // set conversion formula and toggle F and C buttons
     if (weather_unit == 'C') {
+      conversionFormula = function(temp) {return (temp * (9/5) + 32);}
       weather_unit = 'F';
       farenheit_button.removeEventListener('click', convertTemps);
       farenheit_button.className = '';
       celsius_button.addEventListener('click', convertTemps);
       celsius_button.className = 'toggable';
     } else {
+      conversionFormula = function(temp) {return ((temp - 32) * (5/9));} 
       weather_unit = 'C';
       celsius_button.removeEventListener('click', convertTemps);
       celsius_button.className = '';
       farenheit_button.addEventListener('click', convertTemps);
       farenheit_button.className = 'toggable';
     }
-  }
+    
+    const temperatureNodes = [current_weather,
+                              current_high_low,
+                              day_one_temps,
+                              day_two_temps,
+                              day_three_temps,
+                              day_four_temps,
+                              day_five_temps,
+                              day_six_temps,
+                              day_seven_temps];
+    
+    // render new temps
+    for (let i = 0; i < temperatureNodes.length; i++) {
+      if (temperatureNodes[i].innerHTML.includes('/')) {
+        // convert high and low temps
+        let highAndLow = [];
+        highAndLow = temperatureNodes[i].innerHTML.split('/');
+        for (let j = 0; j < highAndLow.length; j++) {
+          highAndLow[j] = highAndLow[j].replace('°', '');
+          highAndLow[j] = Math.round(conversionFormula(highAndLow[j])) + '°';
+        }
+        temperatureNodes[i].innerHTML = highAndLow.join('/');
+      } else {
+        // convert current temp
+        temperatureNodes[i].innerHTML = Math.round(conversionFormula(temperatureNodes[i].innerHTML));
+      }
+    }
+  } // close convertTemps function
     
   if (navigator.geolocation) {
     // get current coordinates of user
