@@ -56,6 +56,7 @@ window.addEventListener('load', () => {
   
   // convert and render weather units
   function convertTemps() {
+    // toggle F and C buttons' functionality
     if (weather_unit == 'C') {
       weather_unit = 'F';
       farenheit_button.removeEventListener('click', convertTemps);
