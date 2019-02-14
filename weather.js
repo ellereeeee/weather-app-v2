@@ -4,6 +4,8 @@ window.addEventListener('load', () => {
   let weather_unit;
   let skycons = new Skycons({'color': 'white'});
   
+  let location = document.getElementById('location');
+  
   // DOM references for current weather elements
   let current_weather = document.getElementById('current-weather');
   let farenheit_button = document.getElementById('farenheit');
@@ -122,10 +124,27 @@ window.addEventListener('load', () => {
       latitude = position.coords.latitude;
       longitude = position.coords.longitude;
       
+      // call locationiq API
+      const locationiqAPI = `https://us1.locationiq.com/v1/reverse.php?key=fabda37ee4fa7a&lat=${latitude}&lon=${longitude}&format=json&zoom=10&accept-language=en`;
+      
+      fetch(locationiqAPI)
+        .then(response => { 
+          return response.json();
+        })
+        .then(data => {
+          console.log(data)
+      
+          // render current city and state
+          let { city } = data.address; 
+          location.innerHTML = city;
+          
+        
+        }); // close locationiq api call
+      
+      // call dark sky API
       const proxy = 'https://cors-anywhere.herokuapp.com/';
       const darkSkyAPI = `${proxy}https://api.darksky.net/forecast/4e38f510a79dde73e99fcfe03980e309/${latitude},${longitude}?units=auto`;
       
-      // call dark sky API
       fetch(darkSkyAPI)
         .then(response => {
           return response.json();
@@ -184,7 +203,7 @@ window.addEventListener('load', () => {
           // initialize toggable weather unit
           weather_unit == 'C' ? farenheit_button.addEventListener('click', convertData) : celsius_button.addEventListener('click', convertData);
 
-        }); // close fetch(api)
+        }); // close dark sky api call
     }); // close getCurrentPosition
   } // close navigator.geolocation
 }); // close window.addEventListener
