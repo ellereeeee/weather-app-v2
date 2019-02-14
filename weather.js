@@ -132,7 +132,6 @@ window.addEventListener('load', () => {
           return response.json();
         })
         .then(data => {
-          console.log(data)
       
           // render current city and state
           let { city } = data.address; 
@@ -150,7 +149,6 @@ window.addEventListener('load', () => {
           return response.json();
         })
         .then(data => {
-          console.log(data);
           
           // unpack current weather and render info
           let { icon, temperature, windSpeed, precipProbability } = data.currently;
