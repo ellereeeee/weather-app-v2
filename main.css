@@ -85,37 +85,10 @@ table {
   =======================================
 */
 
-.location {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  width: 85%;
-}
-
-.location input, .location button {
-  height: 1.75em;
-}
-
-.location input {
-  background: rgba(0,0,0,0);
-  border: 0;
-  color: #FFF;
-  font: 1em/1em 'Montserrat', sans-serif;
-  letter-spacing: .05em;
+#location {
+  line-height: 1em;
+  padding-top: .66em;
   text-transform: uppercase;
-  width: 80%;
-}
-
-.location input::placeholder {
-  color: #FFF;
-  letter-spacing: .05em;
-}
-
-.location button {
-  background: url(icons/search-icon.svg) center no-repeat;
-  background-size: cover;
-  border: 0;
-  width: 1.75em;
 }
 
 /*
