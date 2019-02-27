@@ -132,7 +132,7 @@ window.addEventListener('load', () => {
           return response.json();
         })
         .then(data => {
-          console.log(data);
+        
           // render current city and state
           let { city, county } = data.address; 
           location.innerHTML = city ? city : county;
@@ -149,7 +149,7 @@ window.addEventListener('load', () => {
           return response.json();
         })
         .then(data => {
-          
+          console.log(data);
           // unpack current weather and render info
           let { icon, temperature, windSpeed, precipProbability } = data.currently;
           let { units } = data.flags;
@@ -160,7 +160,7 @@ window.addEventListener('load', () => {
           farenheit_button.style.display = "inline-block";
           celsius_button.style.display = "inline-block";
           (units == 'si' ? farenheit_button.className = "toggable" : celsius_button.className = "toggable");
-          current_wind_speed.innerHTML = `${Math.round(windSpeed)} m/s`;
+          current_wind_speed.innerHTML = `${Math.round(windSpeed)} ${windSpeed == 'si' ? 'm/s' : 'mph'}`;
           current_high_low.innerHTML = `${Math.round(temperatureHigh)}°/${Math.round(temperatureLow)}°`;
           current_precip_chance.innerHTML = precipProbability + '%';
           
