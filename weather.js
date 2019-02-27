@@ -132,10 +132,10 @@ window.addEventListener('load', () => {
           return response.json();
         })
         .then(data => {
-      
+          console.log(data);
           // render current city and state
-          let { city } = data.address; 
-          location.innerHTML = city;
+          let { city, county } = data.address; 
+          location.innerHTML = city ? city : county;
           
         
         }); // close locationiq api call
