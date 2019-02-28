@@ -202,6 +202,6 @@ window.addEventListener('load', () => {
           weather_unit == 'C' ? farenheit_button.addEventListener('click', convertData) : celsius_button.addEventListener('click', convertData);
 
         }); // close dark sky api call
-    }); // close getCurrentPosition
+    }, function(error) {if (error.code == 1) {Swal.fire({backdrop: false, title: 'Uh oh!', text: 'Please share your location.', type: 'error', confirmButtonText: 'Ok'})}}); // close getCurrentPosition
   } // close navigator.geolocation
 }); // close window.addEventListener
