@@ -76,10 +76,10 @@ body {
   font-family: 'Montserrat';
 }
 
-.weather-app {
+#weather-app {
   align-items: center;
   color: #FFF;
-  display: flex;
+  display: none;
   flex-direction: column;
   font: 1.3em/1.3em 'Montserrat', sans-serif;
   min-height: 100vh;
@@ -217,7 +217,7 @@ body {
     width: 20.8rem;
   }
   
-  .weather-app {
+  #weather-app {
     font: 1.3em/1.3em "Montserrat", sans-serif;
     min-height: 35.7rem;
     width: 20.8rem;

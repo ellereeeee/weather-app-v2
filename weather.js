@@ -195,6 +195,8 @@ window.addEventListener('load', () => {
         
           skycons.play();
         
+          document.getElementById('weather-app').style.display = 'flex';
+        
           // initialize weather unit state
           units == 'si' ? weather_unit = 'C' : weather_unit = 'F';
         
