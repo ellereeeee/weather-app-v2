@@ -78,6 +78,7 @@ body {
 
 #weather-app {
   align-items: center;
+  animation: fadein 2s;
   color: #FFF;
   display: none;
   flex-direction: column;
@@ -85,6 +86,11 @@ body {
   min-height: 100vh;
   justify-content: space-around;
   letter-spacing: .05em;
+}
+
+@keyframes fadein {
+  0% { opacity: 0; }
+  100% {opacity: 1; }
 }
 
 /*
