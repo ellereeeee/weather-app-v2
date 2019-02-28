@@ -67,13 +67,17 @@ table {
   =======================================
 */
 
+.blue-container {
+  background: linear-gradient(180deg, #004E92 0%, #000428 100%);
+  min-height: 100vh;
+}
+
 body {
   font-family: 'Montserrat';
 }
 
 .weather-app {
   align-items: center;
-  background: linear-gradient(180deg, #004E92 0%, #000428 100%);
   color: #FFF;
   display: flex;
   flex-direction: column;
@@ -207,11 +211,16 @@ body {
     justify-content: center;
   }
   
-  .weather-app {
+  .blue-container {
     box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.25);
+    min-height: 35.7rem;
+    width: 20.8rem;
+  }
+  
+  .weather-app {
     font: 1.3em/1.3em "Montserrat", sans-serif;
-    min-height: 27.5em;
-    width: 16em;
+    min-height: 35.7rem;
+    width: 20.8rem;
   }
   
   .location input, .location button {

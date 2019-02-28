@@ -13,77 +13,81 @@
   <body>
    
     <!-- Main Container -->
-    <div class="weather-app">
-     
-      <!-- Location -->
-      <p id="location"></p>
-      
-      <!-- Current Weather -->
-      <div class="current-weather">
-        <canvas id="current-weather-icon" width="128" height="128"></canvas>
-        <div class="temp">
-          <p id="current-weather"></p><p id="farenheit">F°</p><p id="celsius">C°</p>
+    <div class="blue-container">
+
+      <div class="weather-app">
+
+        <!-- Location -->
+        <p id="location"></p>
+
+        <!-- Current Weather -->
+        <div class="current-weather">
+          <canvas id="current-weather-icon" width="128" height="128"></canvas>
+          <div class="temp">
+            <p id="current-weather"></p><p id="farenheit">F°</p><p id="celsius">C°</p>
+          </div>
         </div>
+
+        <!-- Current Weather Details -->
+        <div class="current-weather-details">
+          <div>
+            <img src="icons/wind%20speed.svg" alt=""><p id="current-wind-speed"></p>
+          </div>
+
+          <div>
+            <img src="icons/high%20and%20low.svg" alt=""><p id="current-high-low"></p>
+          </div>
+
+          <div>
+            <img src="icons/precip%20chance.svg" alt=""><p id="current-precip-chance"></p>
+          </div>        
+        </div>
+
+        <!-- Weekly Forecast -->
+        <div class="weekly-forecast">
+
+          <div class="weekday-forecast">
+            <p id="day-one"></p>
+            <div><canvas id="day-one-icon" width="25" height="25"></canvas><p id="day-one-temps"></p></div>
+          </div>
+
+          <div class="weekday-forecast">
+            <p id="day-two"></p>
+            <div><canvas id="day-two-icon" width="25" height="25"></canvas><p id="day-two-temps"></p></div>
+          </div>
+
+          <div class="weekday-forecast">
+            <p id="day-three"></p>
+            <div><canvas id="day-three-icon" width="25" height="25"></canvas><p id="day-three-temps"></p></div>
+          </div>
+
+          <div class="weekday-forecast">
+            <p id="day-four"></p>
+            <div><canvas id="day-four-icon" width="25" height="25"></canvas><p id="day-four-temps"></p></div>
+          </div>
+
+          <div class="weekday-forecast">
+            <p id="day-five"></p>
+            <div><canvas id="day-five-icon" width="25" height="25"></canvas><p id="day-five-temps"></p></div>
+          </div>
+
+          <div class="weekday-forecast">
+            <p id="day-six"></p>
+            <div><canvas id="day-six-icon" width="25" height="25"></canvas><p id="day-six-temps"></p></div>
+          </div>
+
+          <div class="weekday-forecast">
+            <p id="day-seven"></p>
+            <div><canvas id="day-seven-icon" width="25" height="25"></canvas><p id="day-seven-temps"></p></div>
+          </div>
+
+        </div>
+
+        <!-- API Attribution -->
+        <a class="attribution" href="https://darksky.net/poweredby/" target="_blank">Powered by Dark Sky</a>
+
       </div>
-      
-      <!-- Current Weather Details -->
-      <div class="current-weather-details">
-        <div>
-          <img src="icons/wind%20speed.svg" alt=""><p id="current-wind-speed"></p>
-        </div>
-        
-        <div>
-          <img src="icons/high%20and%20low.svg" alt=""><p id="current-high-low"></p>
-        </div>
-        
-        <div>
-          <img src="icons/precip%20chance.svg" alt=""><p id="current-precip-chance"></p>
-        </div>        
-      </div>
-      
-      <!-- Weekly Forecast -->
-      <div class="weekly-forecast">
-       
-        <div class="weekday-forecast">
-          <p id="day-one"></p>
-          <div><canvas id="day-one-icon" width="25" height="25"></canvas><p id="day-one-temps"></p></div>
-        </div>
-        
-        <div class="weekday-forecast">
-          <p id="day-two"></p>
-          <div><canvas id="day-two-icon" width="25" height="25"></canvas><p id="day-two-temps"></p></div>
-        </div>
-         
-        <div class="weekday-forecast">
-          <p id="day-three"></p>
-          <div><canvas id="day-three-icon" width="25" height="25"></canvas><p id="day-three-temps"></p></div>
-        </div>
-        
-        <div class="weekday-forecast">
-          <p id="day-four"></p>
-          <div><canvas id="day-four-icon" width="25" height="25"></canvas><p id="day-four-temps"></p></div>
-        </div>
-        
-        <div class="weekday-forecast">
-          <p id="day-five"></p>
-          <div><canvas id="day-five-icon" width="25" height="25"></canvas><p id="day-five-temps"></p></div>
-        </div>
-        
-        <div class="weekday-forecast">
-          <p id="day-six"></p>
-          <div><canvas id="day-six-icon" width="25" height="25"></canvas><p id="day-six-temps"></p></div>
-        </div>
-        
-        <div class="weekday-forecast">
-          <p id="day-seven"></p>
-          <div><canvas id="day-seven-icon" width="25" height="25"></canvas><p id="day-seven-temps"></p></div>
-        </div>
-        
-      </div>
-      
-      <!-- API Attribution -->
-      <a class="attribution" href="https://darksky.net/poweredby/" target="_blank">Powered by Dark Sky</a>
-      
+
     </div>
 
   </body>
