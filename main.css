@@ -67,6 +67,10 @@ table {
   =======================================
 */
 
+body {
+  font-family: 'Montserrat';
+}
+
 .weather-app {
   align-items: center;
   background: linear-gradient(180deg, #004E92 0%, #000428 100%);
