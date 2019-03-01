@@ -209,6 +209,7 @@ body {
 */
 
 .lds-ring {
+  animation: fadein 2s;
   display: none;
   position: absolute;
   width: 7rem;
