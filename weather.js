@@ -144,9 +144,10 @@ window.addEventListener('load', () => {
       const proxy = 'https://cors-anywhere.herokuapp.com/';
       const darkSkyAPI = `${proxy}https://api.darksky.net/forecast/4e38f510a79dde73e99fcfe03980e309/${latitude},${longitude}?units=auto`;
       
+      document.getElementById('lds-ring').style.display = 'block';
+      
       fetch(darkSkyAPI)
         .then(response => {
-          document.getElementById('lds-ring').style.display = 'block';
           return response.json();
         })
         .then(data => {
