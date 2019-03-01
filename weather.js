@@ -146,9 +146,11 @@ window.addEventListener('load', () => {
       
       fetch(darkSkyAPI)
         .then(response => {
+          document.getElementById('lds-ring').style.display = 'block';
           return response.json();
         })
         .then(data => {
+          document.getElementById('lds-ring').style.display = 'none';
           console.log(data);
           // unpack current weather and render info
           let { icon, temperature, windSpeed, precipProbability } = data.currently;
